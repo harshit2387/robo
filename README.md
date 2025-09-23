@@ -1,7 +1,9 @@
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-i used  Simple I2S Example (A2DS Sink) using default Pins
-Here is the simplest example which just uses the proper default settings:
+Simple I2S Example (A2DP Sink) on ESP32
 
+This example demonstrates how to set up a Bluetooth A2DP Sink on an ESP32 using default I2S pins.
+
+Example Code
 #include "AudioTools.h"
 #include "BluetoothA2DPSink.h"
 
@@ -9,28 +11,55 @@ I2SStream i2s;
 BluetoothA2DPSink a2dp_sink(i2s);
 
 void setup() {
+    // Start Bluetooth device with the name "MyMusic"
     a2dp_sink.start("MyMusic");
 }
 
 void loop() {
+    // Nothing required here
 }
-This creates a new Bluetooth device with the name “MyMusic” and the output will be sent to the following default I2S pins which need to be connected to an external DAC:
-- I2S Audio: Commonly used pins for I2S:
-- BCLK: GPIO27 or GPIO14
-- LRCLK: GPIO25 or GPIO15
-- DIN: GPIO22 or GPIO26
-esp32 - WROOM - DA  with
-Change Partition Scheme
+
+
+When uploaded, this creates a new Bluetooth device named “MyMusic”.
+The audio stream is sent over I2S to an external DAC using the default ESP32 pins.
+
+Default I2S Pin Mapping
+- BCLK: GPIO14
+- LRCLK: GPIO15
+- DIN: GPIO22
+
+Make sure to connect these pins correctly to your DAC for proper audio output.
+
+ESP32 Board Settings
+
+Board: ESP32-WROOM-DA
+
+Partition Scheme:
 Go to Tools → Partition Scheme and select:
-OTA  i have selected (2MB APP/ 2MB SPIFFS)
-and use lib
-✅ Manual Installation of AudioTools
-📦 Step-by-Step:
-- Go to the GitHub repository:
-👉 https://github.com/pschatzmann/arduino-audio-tools
-- Click the green “Code” button → Download ZIP
-- In Arduino IDE:
-- Go to Sketch → Include Library → Add .ZIP Library
-- Select the downloaded ZIP file
-- It will now be available as #include <AudioTools.h> in your sketches.
+OTA (2MB APP / 2MB SPIFFS)
+
+Installing AudioTools Library
+
+The project requires the AudioTools
+ library.
+
+Manual Installation
+
+Visit the GitHub repository:
+👉 pschatzmann/arduino-audio-tools
+
+Click the green Code button → Download ZIP
+
+In Arduino IDE:
+
+Go to Sketch → Include Library → Add .ZIP Library
+
+Select the downloaded ZIP file
+
+The library is now available and can be included with:
+
+#include <AudioTools.h>
+
+
+✅ With this setup, your ESP32 acts as a Bluetooth audio receiver and streams sound via I2S to an external DAC.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
