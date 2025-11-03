@@ -63,7 +63,9 @@ The library is now available and can be included with:
 
 ✅ With this setup, your ESP32 acts as a Bluetooth audio receiver and streams sound via I2S to an external DAC.
 ------------------------------------------------------------------------------------------------------------------
+
 ![WhatsApp Image 2025-11-03 at 9 41 47 PM](https://github.com/user-attachments/assets/73c4bcdb-6645-4d5c-a7a5-b0257be5d673)
+
 in this i have used inmp114 and oled and esp32 dev module and MAX98357A
 Partition Scheme:
 Go to Tools → Partition Scheme and select:
