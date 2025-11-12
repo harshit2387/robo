@@ -71,6 +71,8 @@ Partition Scheme:
 Go to Tools → Partition Scheme and select:
 OTA (2MB APP / 2MB SPIFFS)
 -----------------------------------------------------------------------------
+solder the PCB
+![WhatsApp Image 2025-11-12 at 6 11 35 AM](https://github.com/user-attachments/assets/06d77dfd-19a5-449b-b9cb-b600d86bf08c)
 
 
 
